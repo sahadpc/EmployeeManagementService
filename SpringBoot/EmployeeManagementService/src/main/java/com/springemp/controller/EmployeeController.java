@@ -29,7 +29,9 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 	
-	//Adding Employee
+	// <summary>
+	// API to add employee
+	// </summary>
 	
 	@PostMapping("/addEmployee")
 	public ResponseEntity<String> addEmployee(@RequestBody EmployeeReq employeeReq) {
@@ -37,7 +39,9 @@ public class EmployeeController {
 		return new ResponseEntity<String>("Employee Added Successfully",HttpStatus.CREATED);
 	}
 	
-	//getting all employee
+	// <summary>
+	// API to list all employees
+	// </summary>
 	
 	@GetMapping("/employee")
 	public ResponseEntity<?> findAllEmployee(){
@@ -45,7 +49,9 @@ public class EmployeeController {
 		 return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	
-	//addDependend
+	// <summary>
+	// API to add Dependent to employee
+	// </summary>
 	
 	@PostMapping("/addDepById/{id}")
 	public ResponseEntity<String> addDepended(@PathVariable ("id")  int id,@RequestBody DependentModal dependentModal) {
@@ -53,7 +59,9 @@ public class EmployeeController {
 		return new ResponseEntity<String>("Dependend Added Successfully",HttpStatus.OK);
 	}
 	
-	//show All Depended
+	// <summary>
+	// API to get list of dependent corresponding to a employee
+	// </summary>
 	
 	@GetMapping("/showDepById/{id}")
 	public ResponseEntity<?> showAllDep(@PathVariable ("id")  int id){
@@ -61,7 +69,9 @@ public class EmployeeController {
 		return new ResponseEntity<>(list, HttpStatus.OK) ;
 	}
 	
-	//delete employee
+	// <summary>
+	// API to delete employee
+	// </summary>
 	
 	@GetMapping("/deleteById/{id}")
 	public ResponseEntity<String>  deleteEmployee(@PathVariable ("id") int id) {
@@ -71,7 +81,9 @@ public class EmployeeController {
 		
 	}	
 	
-	//update employee
+	// <summary>
+	// API to update employee details
+	// </summary>
 	
 	@PostMapping("/updateEmployee/{id}")
 	public ResponseEntity<String> updateEmployee(@PathVariable ("id") int id,@RequestBody EmployeeReq employeeReq )
@@ -80,7 +92,9 @@ public class EmployeeController {
 		return new ResponseEntity<String>("Employ Updated Successfully",HttpStatus.OK);
 	}
 	
-	//sort By Salary	
+	// <summary>
+	// API to sort employee list by Salary	
+	// </summary>
 	
 	@GetMapping("/sortBySalary")
 	public ResponseEntity<?> sortEmployee() {
@@ -88,7 +102,9 @@ public class EmployeeController {
 		return new ResponseEntity<>(list,HttpStatus.OK);
 	}	
 	
-	//pagination for list of employee
+	// <summary>
+	// API to get paginated  list of employee
+	// </summary>
 	
 	@GetMapping("/page/{pageNo}")
 	public ResponseEntity<?> findPaginated(@PathVariable("pageNo") int pageNo) {
@@ -98,7 +114,9 @@ public class EmployeeController {
 		return new ResponseEntity<>(employees,HttpStatus.OK);
 	}	
 	
-	//pagination for list of employee sorted by salary
+	// <summary>
+	// API to get paginated  list of employee sorted by salary
+	// </summary>
 	
 	@GetMapping("/pagee/{pageNoo}")
 	public List<EmployeeDet> findPaginatedd(@PathVariable("pageNoo") int pageNo,
