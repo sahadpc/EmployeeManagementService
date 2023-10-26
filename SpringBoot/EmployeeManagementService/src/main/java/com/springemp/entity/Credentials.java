@@ -15,13 +15,14 @@ public class Credentials {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int credId;
+	
 	@Column(name = "user_name",nullable = false)
 	private String userName;
+	
 	@Column(name = "password",nullable = false)
 	private String password;
 	
 	@OneToOne(mappedBy = "credentials")
-	//@JoinColumn(name = "userId"/* ,referencedColumnName = "userId" */)
 	private EmployeeDet employeeDet;
 
 	

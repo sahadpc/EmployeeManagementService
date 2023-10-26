@@ -19,6 +19,7 @@ public class EmployeeDependents {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int depId;
+	
 	@Column(name = "dependent_name",nullable = false)
 	private String dependentName;
 	
