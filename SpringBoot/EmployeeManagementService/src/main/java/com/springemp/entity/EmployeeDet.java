@@ -1,6 +1,6 @@
 package com.springemp.entity;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -21,12 +21,17 @@ public class EmployeeDet {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int empId;
+	
 	@Column(name = "emp_name",nullable = false)
 	private String empName;
+	
 	@Column(name = "salary",nullable = false)
 	private double salary;
+	
 	@Column(name = "address",nullable = false)
 	private String address;
+	
+	
 	@Column(name = "email",nullable =false)
 	private String email;
 	

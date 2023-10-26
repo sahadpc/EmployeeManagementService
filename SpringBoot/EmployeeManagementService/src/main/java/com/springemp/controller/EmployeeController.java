@@ -34,7 +34,7 @@ public class EmployeeController {
 	@PostMapping("/addEmployee")
 	public ResponseEntity<String> addEmployee(@RequestBody EmployeeReq employeeReq) {
 		employeeService.saveEmployee(employeeReq);
-		return new ResponseEntity<String>("Employee Added SUccessfully",HttpStatus.CREATED);
+		return new ResponseEntity<String>("Employee Added Successfully",HttpStatus.CREATED);
 	}
 	
 	//getting all employee
